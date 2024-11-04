@@ -79,11 +79,23 @@ if athlete_data is not None:
     st.dataframe(aggregated_data)
 
     # Visualization: Rank Progression of Top Athletes
-    st.write("Rank Progression of Top Athletes")
+    #st.write("Rank Progression of Top Athletes")
     rank_progression_fig = plot_rank_progression(top_athletes, split_columns, category_filter, time_measure)
     st.plotly_chart(rank_progression_fig)
+    # Display additional information using Streamlit
+    st.markdown(
+    "Note: This chart shows how the rankings of top athletes change at different checkpoints.<br>"
+    "Chip Time adjusts for each athlete's starting position by removing the start delay from Gun Time, making performances comparable regardless of when they crossed the starting line.<br>"
+    "Official finishing ranks are based on Gun Time.",
+    unsafe_allow_html=True
+    )
+
+
+
+
 
     # Plot finish times ridge plot
-    st.write("Finish Times Ridge Plot (Bar Version)")
+    #st.write("Finish Times Ridge Plot (Bar Version)")
     ridge_plot_fig = plot_finish_times_ridge(filtered_data,categories)
     st.plotly_chart(ridge_plot_fig)
+    st.markdown("Note: This chart shows how how many athletes finished the race in which time range.")
