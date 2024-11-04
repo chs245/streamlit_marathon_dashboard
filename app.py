@@ -85,8 +85,8 @@ if athlete_data is not None:
     # Display additional information using Streamlit
     st.markdown(
     "Note: This chart shows how the rankings of top athletes change at different checkpoints.<br>"
-    "Chip Time adjusts for each athlete's starting position by removing the start delay from Gun Time, making performances comparable regardless of when they crossed the starting line.<br>"
-    "Official finishing ranks are based on Gun Time.",
+    "   Chip Time adjusts for each athlete's starting position by removing the start delay from Gun Time, making performances comparable regardless of when they crossed the starting line.<br>"
+    "   Official finishing ranks are based on Gun Time.",
     unsafe_allow_html=True
     )
 
@@ -98,4 +98,7 @@ if athlete_data is not None:
     #st.write("Finish Times Ridge Plot (Bar Version)")
     ridge_plot_fig = plot_finish_times_ridge(filtered_data,categories)
     st.plotly_chart(ridge_plot_fig)
-    st.markdown("Note: This chart shows how how many athletes finished the race in which time range.")
+    st.markdown("Note: This chart shows how how many athletes finished the race in which time range.<br>"
+                "      Interesting to note: The average athlete in age group 35 years is faster than the athlete in the younger age group Msen/Vsen).<br>"
+                "      On average, each age group takes 5 to 10 minutes more to finish the race"
+                ,unsafe_allow_html=True)
